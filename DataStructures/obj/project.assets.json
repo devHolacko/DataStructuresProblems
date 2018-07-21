@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DevStuff\\Dummy\\DS\\DataStructures\\DataStructures\\DataStructures.csproj",
+      "projectUniqueName": "D:\\DevStuff\\Dummy\\DS\\DataStructuresProblems\\DataStructures\\DataStructures.csproj",
       "projectName": "DataStructures",
-      "projectPath": "D:\\DevStuff\\Dummy\\DS\\DataStructures\\DataStructures\\DataStructures.csproj",
+      "projectPath": "D:\\DevStuff\\Dummy\\DS\\DataStructuresProblems\\DataStructures\\DataStructures.csproj",
       "packagesPath": "C:\\Users\\devab\\.nuget\\packages\\",
-      "outputPath": "D:\\DevStuff\\Dummy\\DS\\DataStructures\\DataStructures\\obj\\",
+      "outputPath": "D:\\DevStuff\\Dummy\\DS\\DataStructuresProblems\\DataStructures\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
