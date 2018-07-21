@@ -106,6 +106,7 @@ namespace DataStructures.SinglyLinkedList
                     {
                         return true;
                     }
+                    current = current.Next;
                 }
             }
             return false;
@@ -147,12 +148,31 @@ namespace DataStructures.SinglyLinkedList
                     {
                         Head = null;
                         Tail = null;
-                        return true;
+                        isRemoved = true;
                     }
                     else
                     {
                         var current = Head;
-                        while (!current.Value.Equals(item))
+                        if (current.Value.Equals(item))
+                        {
+                            Head = Head.Next;
+                            isRemoved = true;
+                        }
+                        if (Tail.Value.Equals(item))
+                        {
+                            while (!current.Value.Equals(Tail.Value))
+                            {
+                                if (current.Next.Value.Equals(Tail.Value))
+                                {
+                                    current.Next = null;
+                                    Tail = current;
+                                    isRemoved = true;
+                                    break;
+                                }
+                                current = current.Next;
+                            }
+                        }
+                        while (!current.Value.Equals(item) && !isRemoved)
                         {
                             if (current.Next != null && current.Next.Value.Equals(item))
                             {
