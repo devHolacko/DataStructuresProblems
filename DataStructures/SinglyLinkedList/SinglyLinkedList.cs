@@ -95,14 +95,14 @@ namespace DataStructures.SinglyLinkedList
         {
             if (Count != 0)
             {
-                if (Head.Equals(item))
+                if (Head.Value.Equals(item))
                 {
                     return true;
                 }
                 LinkedListNode<T> current = Head;
                 while (current.Next != null)
                 {
-                    if (current.Next.Equals(item))
+                    if (current.Next.Value.Equals(item))
                     {
                         return true;
                     }
@@ -138,9 +138,40 @@ namespace DataStructures.SinglyLinkedList
 
         public bool Remove(T item)
         {
-            throw new NotImplementedException();
+            var isRemoved = false;
+            if (Contains(item))
+            {
+                if (Count > 0)
+                {
+                    if (Count == 1 && Contains(item))
+                    {
+                        Head = null;
+                        Tail = null;
+                        return true;
+                    }
+                    else
+                    {
+                        var current = Head;
+                        while (!current.Value.Equals(item))
+                        {
+                            if (current.Next != null && current.Next.Value.Equals(item))
+                            {
+                                current.Next = current.Next.Next;
+                                isRemoved = true;
+                                break;
+                            }
+                            current = current.Next;
+                        }
+                    }
+
+                    Count--;
+                }
+            }
+
+            return isRemoved;
+
         }
-        
+
 
         IEnumerator IEnumerable.GetEnumerator()
         {
